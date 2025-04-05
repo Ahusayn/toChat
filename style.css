@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.introduction {
+    flex: 1;
+    padding: 50px;
+}
+
+h1 {
+    width: 550px;
+    font-size: 4rem;
+    font-style: italic;
+    color: #C4A484;
+    padding-bottom: 32px;
+    font-weight: bold;
+}
+
+.name {
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    color: #4283D1; 
+    letter-spacing: 2px; 
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background 0.2s ease-in-out;
+}
+
+.primary {
+    background: #C4A484;
+    color: white;
+    border-radius: 5px;
+}
+
+.primary:hover {
+    background: #D6B692; /* Slightly lighter on hover */
+}
+
+.primary:active {
+    background: #E7C3A1; /* Even lighter on click */
+}
+
+.secondary {
+    background: transparent;
+    border: 2px solid #4283D1;
+    color: #4283D1;
+    border-radius: 5px;
+}
+
+.secondary:hover {
+    background: #A9C7F0;
+    color: white;
+}
+
+.secondary:active {
+    background: #C0D8F8;
+    border-color: #C0D8F8;
+    color: white;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #4283D1;
+    height: 80vh;
+    width: 100vh;
+    border-radius: 10px;
+}
+
+/* Login Page */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.login-container input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    width: 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}

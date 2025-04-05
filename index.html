@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toChat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="introduction">
+            <h1><strong> Welcome to </strong> <span class="name">toCHAT</span> <span> Stay connected, Always</span></h1>
+            <div class="buttons">
+            <button id= "loginBtn" class="btn primary">Login</button>
+            <button id="registerBtn" class="btn secondary">Register</button>
+           </div>
+        </div>
+        <div class="sidebar">
+            <!-- <img src="message.png" alt=""> -->
+        </div>
+    </div>
+    <footer>
+        <p>All Rights Reserved- HSSN</p>
+    </footer>
+
+        <script>
+        document.getElementById("loginBtn").addEventListener("click", function() {
+            window.location.href = "login.html"; 
+        });
+        </script>
+
+     <script>
+     document.getElementById("registerBtn").addEventListener("click", function() {
+        window.location.href = "register.html";  
+      });
+     </script>
+
+     <!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js"></script>
+
+
+     
+    
+   
+</body>
+</html>

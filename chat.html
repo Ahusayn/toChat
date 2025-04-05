@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat App</title>
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="comments.png" alt="Logo">
+      <h2>toChat</h2>
+      <nav>
+        <ul>
+          <li class="active">Chat</li>
+          <li>People</li>
+          <li>Favorites</li>
+          <li>Profile</li>
+          <li>LogOut</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Chat List -->
+    <section class="chat-list">
+      <h3>Chats</h3>
+      <input type="text" placeholder="Search Messenger..." class="search-bar">
+      <ul id="users">
+        <li class="chat-item" id="chat1">
+          <img src="user1.jpg" alt="User Image" class="avatar">
+          <div class="chat-info">
+            <span class="name">HSYN</span>
+            <span class="last-message"></span>
+          </div>
+        </li>
+        <li class="chat-item" id="chat2">
+          <img src="user2.jpg" alt="User Image" class="avatar">
+          <div class="chat-info">
+            <span class="name">C3DF</span>
+            <span class="last-message"></span>
+          </div>
+        </li>
+    
+        <!-- Additional Users -->
+        <li class="chat-item">
+          <img src="amina.jpg" alt="User Image" class="avatar">
+          <div class="chat-info">
+            <span class="name">Amina</span>
+            <span class="last-message"></span>
+          </div>
+        </li>
+        <li class="chat-item">
+          <img src="layla.jpg" alt="User Image" class="avatar">
+          <div class="chat-info">
+            <span class="name">Layla</span>
+            <span class="last-message"></span>
+          </div>
+        </li>
+        <li class="chat-item">
+          <img src="zainab.jpg" alt="User Image" class="avatar">
+          <div class="chat-info">
+            <span class="name">Zainab</span>
+            <span class="last-message"></span>
+          </div>
+        </li>
+        <li class="chat-item">
+          <img src="hadiza.jpg" alt="User Image" class="avatar">
+          <div class="chat-info">
+            <span class="name">Hadiza</span>
+            <span class="last-message"></span>
+          </div>
+        </li>
+        <li class="chat-item">
+          <img src="damilola.jpg" alt="User Image" class="avatar">
+          <div class="chat-info">
+            <span class="name">Damilola</span>
+            <span class="last-message"></span>
+          </div>
+        </li>
+        <li class="chat-item">
+          <img src="maryam.jpg" alt="User Image" class="avatar">
+          <div class="chat-info">
+            <span class="name">Maryam</span>
+            <span class="last-message"></span>
+          </div>
+        </li>
+        <li class="chat-item">
+          <img src="omar.jpg" alt="User Image" class="avatar">
+          <div class="chat-info">
+            <span class="name">Omar</span>
+            <span class="last-message"></span>
+          </div>
+        </li>
+        <li class="chat-item">
+          <img src="yusuf.jpg" alt="User Image" class="avatar">
+          <div class="chat-info">
+            <span class="name">Yusuf</span>
+            <span class="last-message"></span>
+          </div>
+        </li>
+        <li class="chat-item">
+          <img src="bashir.jpg" alt="User Image" class="avatar">
+          <div class="chat-info">
+            <span class="name">Bashir</span>
+            <span class="last-message"></span>
+          </div>
+        </li>
+        <li class="chat-item">
+          <img src="sani.jpg" alt="User Image" class="avatar">
+          <div class="chat-info">
+            <span class="name">Sani</span>
+            <span class="last-message"></span>
+          </div>
+        </li>
+      </ul>
+    </section>
+    
+
+    <!-- Chat Window -->
+    <section class="chat-window">
+      <header class="chat-header">
+        <img src="user1.jpg" alt="User" class="avatar">
+        <div class="chat-details">
+          <h3 id="chatHeader">HSYN</h3>
+          <span class="status">Online</span>
+        </div>
+        <div class="chat-actions">
+          <button class="call-btn">📞</button>
+          <button class="video-btn">📹</button>
+        </div>
+      </header>
+      <div id="messages" class="chat-messages">
+        <div class="message received"></div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Write something...">
+        <button id="sendBtn">Send</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="chat.js"></script>
+  
+</body>
+</html>
