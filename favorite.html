@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Favorites - toChat App</title>
+  <link rel="stylesheet" href="favorite.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="comments.png" alt="Logo" />
+      <h2>toChat</h2>
+      <nav>
+        <ul>
+          <li><a href="chat.html">Chat</a></li>
+          <li><a href="people.html">People</a></li>
+          <li class="active">Favorites</li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="login.html">LogOut</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Favorites List -->
+    <section class="chat-list">
+      <h3>Favorites</h3>
+      <ul id="favorites-list"></ul>
+    </section>
+  </div>
+
+  <script>
+    const list = document.getElementById("favorites-list");
+    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+    if (favorites.length === 0) {
+      list.innerHTML = "<p>No favorites yet.</p>";
+    } else {
+      favorites.forEach(user => {
+        const li = document.createElement("li");
+        li.className = "chat-item";
+        li.innerHTML = `
+          <img src="${user.img}" alt="${user.name}" class="avatar" />
+          <div class="chat-info">
+            <span class="name">${user.name}</span>
+          </div>
+        `;
+        list.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>

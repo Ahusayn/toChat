@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <img src="comments.png" alt="Logo">
+          <h2>toChat</h2>
+          <nav>
+            <ul>
+              <li><a href="chat.html"></a>Chat</li>
+              <li><a href="people.html">People</a></li>
+              <li><a href="favorite.html">Favorites</a></li>
+              <li class="active"><a href="profile.html">Profile</a></li>
+              <li><a href="login.html">Log Out</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <section class="profile-info">
+          <div class="profile-photo">
+            <label for="photo-upload" class="photo-placeholder" id="photo-preview">
+              <span>add<br>photo</span>
+            </label>
+            <input type="file" id="photo-upload" accept="image/*" style="display: none;">
+            <p>Enter your name and add an optional profile picture</p>
+          </div>
+          
+        
+          <div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" value="">
+          </div>
+        
+          
+        
+          <div class="input-group">
+            <label for="about">About</label>
+            <input type="text" id="about" value=".">
+          </div>
+        
+          <button id="log-out"><a href="index.html">Log out</a></button>
+        </section>
+        
+    </div>
+
+    <script>
+      const photoUpload = document.getElementById('photo-upload');
+      const photoPreview = document.getElementById('photo-preview');
+      const nameInput = document.getElementById('name');
+      const aboutInput = document.getElementById('about'); // ← NEW
+    
+      // Load saved image, user email, and about on page load
+      window.addEventListener('DOMContentLoaded', () => {
+        const savedImage = localStorage.getItem('profileImage');
+        if (savedImage) {
+          photoPreview.style.backgroundImage = `url('${savedImage}')`;
+          photoPreview.innerHTML = ""; // Hide the "add photo" text
+        }
+    
+        const userEmail = localStorage.getItem('currentUser');
+        if (userEmail) {
+          nameInput.value = userEmail;
+        } else {
+          // Redirect if not logged in (optional)
+          window.location.href = "login.html";
+        }
+    
+        const savedAbout = localStorage.getItem('aboutText');
+        if (savedAbout) {
+          aboutInput.value = savedAbout;
+        }
+      });
+    
+      // Save profile photo
+      photoUpload.addEventListener('change', function () {
+        const file = this.files[0];
+        if (file) {
+          const reader = new FileReader();
+    
+          reader.onload = function (e) {
+            const imageDataUrl = e.target.result;
+    
+            // Save to localStorage
+            localStorage.setItem('profileImage', imageDataUrl);
+    
+            // Set preview
+            photoPreview.style.backgroundImage = `url('${imageDataUrl}')`;
+            photoPreview.innerHTML = ""; // Remove text
+          };
+    
+          reader.readAsDataURL(file);
+        }
+      });
+    
+      // Save About text on change
+      aboutInput.addEventListener('input', function () {
+        localStorage.setItem('aboutText', aboutInput.value);
+      });
+    </script>
+    
+    
+</body>
+</html>

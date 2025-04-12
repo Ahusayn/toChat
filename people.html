@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>People - Chat App</title>
+  <link rel="stylesheet" href="people.css" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="comments.png" alt="Logo" />
+      <h2>toChat</h2>
+      <nav>
+        <ul>
+          <li><a href="chat.html">Chat</a></li>
+          <li class="active">People</li>
+          <li><a href="favorite.html">Favorites</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="login.html">LogOut</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- People List -->
+    <section class="chat-list">
+      <h3>People</h3>
+      <input type="text" placeholder="Search People..." class="search-bar" />
+      <ul id="users">
+        <li class="chat-item">
+          <img src="amina.jpg" alt="Amina" class="avatar" />
+          <div class="chat-info">
+            <span class="name">Amina</span>
+            <span class="star" data-name="Amina" data-img="amina.jpg">&#9734;</span>
+          </div>
+        </li>
+        <li class="chat-item">
+          <img src="bashir.jpg" alt="Bashir" class="avatar" />
+          <div class="chat-info">
+            <span class="name">Bashir</span>
+            <span class="star" data-name="Bashir" data-img="bashir.jpg">&#9734;</span>
+          </div>
+        </li>
+
+        <li class="chat-item">
+          <img src="user2.jpg" alt="C3DF" class="avatar" />
+          <div class="chat-info">
+            <span class="name">C3DF</span>
+            <span class="star" data-name="C3DF" data-img="user2.jpg">&#9734;</span>
+          </div>
+        </li>
+
+        <li class="chat-item">
+          <img src="damilola.jpg" alt="Damilola" class="avatar" />
+          <div class="chat-info">
+            <span class="name">Damilola</span>
+            <span class="star" data-name="Damilola" data-img="damilola.jpg">&#9734;</span>
+          </div>
+        </li>
+        <li class="chat-item">
+          <img src="hadiza.jpg" alt="Hadiza" class="avatar" />
+          <div class="chat-info">
+            <span class="name">Hadiza</span>
+            <span class="star" data-name="Hadiza" data-img="hadiza.jpg">&#9734;</span>
+          </div>
+        </li>
+        <li class="chat-item">
+          <img src="user1.jpg" alt="HSYN" class="avatar" />
+          <div class="chat-info">
+            <span class="name">HSYN</span>
+            <span class="star" data-name="HSYN" data-img="user1.jpg">&#9734;</span>
+          </div>
+        </li>
+
+        <li class="chat-item">
+          <img src="layla.jpg" alt="Layla" class="avatar" />
+          <div class="chat-info">
+            <span class="name">Layla</span>
+            <span class="star" data-name="Layla" data-img="layla.jpg">&#9734;</span>
+          </div>
+        </li>
+
+        <li class="chat-item">
+          <img src="maryam.jpg" alt="Maryam" class="avatar" />
+          <div class="chat-info">
+            <span class="name">Maryam</span>
+            <span class="star" data-name="Maryam" data-img="maryam.jpg">&#9734;</span>
+          </div>
+        </li>
+
+        <li class="chat-item">
+          <img src="omar.jpg" alt="Omar" class="avatar" />
+          <div class="chat-info">
+            <span class="name">Omar</span>
+            <span class="star" data-name="Omar" data-img="omar.jpg">&#9734;</span>
+          </div>
+        </li>
+
+        <li class="chat-item">
+          <img src="layla.jpg" alt="Layla" class="avatar" />
+          <div class="chat-info">
+            <span class="name">Layla</span>
+            <span class="star" data-name="Layla" data-img="layla.jpg">&#9734;</span>
+          </div>
+        </li>
+
+        <li class="chat-item">
+          <img src="sani.jpg" alt="Sani" class="avatar" />
+          <div class="chat-info">
+            <span class="name">Sani</span>
+            <span class="star" data-name="Sani" data-img="sani.jpg">&#9734;</span>
+          </div>
+        </li>
+
+        <li class="chat-item">
+          <img src="Yusuf.jpg" alt="Yusuf" class="avatar" />
+          <div class="chat-info">
+            <span class="name">Yusuf</span>
+            <span class="star" data-name="Yusuf" data-img="yusuf.jpg">&#9734;</span>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+    document.querySelectorAll(".star").forEach(star => {
+      const name = star.dataset.name;
+
+      // Highlight already favorited
+
+      if (favorites.some(user => user.name === name)) {
+        star.classList.add("favorited");
+        star.innerHTML = "&#9733;"; // filled star
+      }
+
+      star.addEventListener("click", () => {
+        star.classList.toggle("favorited");
+
+        const img = star.dataset.img;
+        const user = { name, img };
+
+        const index = favorites.findIndex(u => u.name === name);
+        if (index > -1) {
+          favorites.splice(index, 1); // remove
+          star.innerHTML = "&#9734;"; // empty star
+        } else {
+          favorites.push(user); // add
+          star.innerHTML = "&#9733;"; // filled star
+        }
+
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+      });
+
+    });
+  </script>
+</body>
+
+</html>

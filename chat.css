@@ -59,6 +59,18 @@ body {
   transition: background 0.3s;
 }
 
+.sidebar ul li a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+}
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+
+
 .sidebar nav ul li:hover,
 .sidebar nav ul .active {
   background: rgba(255, 255, 255, 0.2);
@@ -233,5 +245,5 @@ body {
 }
 
 .chat-input button:hover {
-  background: #0056b3;
+  background: #C4A484;
 }

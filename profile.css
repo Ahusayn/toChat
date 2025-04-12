@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f2f5;
+  }
+  
+  .container {
+    display: flex;
+    width: 90%;
+    height: 85vh;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 18%;
+    background: #007bff;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sidebar img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    width: 100%;
+  }
+  
+  .sidebar nav ul li {
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .sidebar ul li a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+  }
+  .sidebar ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .sidebar nav ul li:hover,
+  .sidebar nav ul .active {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+  }
+  
+
+  .profile-info {
+    flex: 1;
+    padding: 40px;
+    /* background-color: #1e1e1e; */
+    background-color: white;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .profile-photo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+ .photo-placeholder {
+  width: 60px;
+  height: 60px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-align: center;
+  color: #C4A484;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  
+  .input-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .input-group input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #f0f2f5;
+    color: black;
+  }
+  
+  #log-out {
+    background-color: transparent;
+    color: red;
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 20px;
+  }
+
+  #logout-a {
+    color: red;
+  }
+  
